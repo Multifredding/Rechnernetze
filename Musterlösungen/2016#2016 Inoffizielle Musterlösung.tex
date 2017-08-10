@@ -1,0 +1,106 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage[top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{titletoc}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\title{Sommersemester 2016 Inoffizielle Lösung}
+\begin{document}
+\section{Physikalische Grundlagen}
+\subsection{}
+\subsection{}
+\subsection{}
+\subsection{}
+\subsection{Für die Bitfolge 01011010001 wird die Prüfsumme mit dem vorherigen Schieberegister bestimmt. Geben Sie den Inhalt des Schieberegisters nach der Initialisierung an. Geben Sie weiterhin an, welche Werte in den Speicherzellen nach den Schritten 5,6 und 7 gespeichert wird.}
+Initialisierung: 01011 \\
+Ab dem 5.: 01011 (rest)
+\section{Lokale Netze und Kodierung}
+\subsection{}
+ACD, Flag ist in der Nachricht enthalten
+\subsection{}
+Bit-Stuffing
+\subsection{}
+1100 0011 1000 1110 1001 00
+\subsection{}
+Danach weil in der Prüfsumme auch der Endflagge enthalten sein könnte
+\subsection{}
+Es könnten ein paar Bits zwisschen den Dateneinheiten liegen.
+Headerfeld mit Länge der Dateneinheit
+\section{Lokale Netze, Protokollmechanismen}
+\subsection{}
+Carrier-Sense Multiple Access with Collision Detection
+\subsection{}
+\begin{enumerate}
+\item Horchen ob Medium belegt ist
+\item Wenn nicht anfangen zu senden und weiterhorchen nach Kollisionen
+\item Bei Kollision aufhören zu senden
+\item Jamming-Signal senden
+\item Backoff-Algorithmus ausführen
+\end{enumerate}
+\subsection{}
+Damit Kollisionen detektiert werden können
+\subsection{}
+$X_{min} = 2 * \frac{m}{v} * r = 2 * \frac{51.2m}{2*10^8 m/s} * 10^9 bit/s = 512 bit$
+\subsection{}
+Ja, Brücke verwirft irgendwelche Informationen wenn ein Puffer überläuft.
+\pagebreak
+\section{}
+\subsection{}
+Ausbreitungsverzögerung, Paketverlust, Routingregeln
+\subsection{}
+\subsection{}
+Count-to-Infinity durch ``Bad News Änderung''
+\pagebreak
+\section{Transportschicht}
+\subsection{}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+Pfeilnr. & Quell-Port & Ziel-Port & SequenzNr & QuittungsNr & gesetzte Flags \\ \hline
+1 (C $\rightarrow$ S)&4711&80&43&23&SYN\\ \hline
+2 (S $\rightarrow$ C)&80&4711&23&44&SYN, ACK\\ \hline
+3 (C $\rightarrow$ S)&4711&80&44&24&ACK\\ \hline
+\end{tabular}
+\subsection{}
+\subsubsection{Flusskontrolle}
+Empfänger kann von Sender überlastet werden
+$\Rightarrow$ Sender muss Größe des Empfangpuffers berücksichtigen
+\subsubsection{Staukontrolle}
+Netz nicht überlasten
+\subsection{}
+\subsubsection{}
+\begin{tabular}{|c|c|}\hline
+Übertragungsrunde(n) & Staukontrollphase von TCP \\ \hline
+1-5 & Slow-Start\\ \hline
+6-9 & Slow-Start\\ \hline
+10-13 & Congestion Avoidance\\ \hline
+14-16 & Slow-Start\\ \hline
+17-20 & Congestion Avoidance\\ \hline
+\end{tabular}
+\subsubsection{}
+Weil ein Stau detektiert wurde durch Paketverluste
+\subsection{}
+Der Sender
+\subsection{}
+Verbindungsbasierter, Zuverlässiger Transportdienst
+\pagebreak
+\section{Anwendungssysteme}
+\subsection{}
+HTTP, Hyper Text Transfer Protocol
+\subsection{}
+Sender-IP, Sender-Port, Empfänger-IP, Empfänger-Port, 
+\subsection{}
+DNS, Domain Name System
+\subsection{}
+\begin{tabular}{|c|c|}\hline
+Nameserver & Verwalteter Namensraum \\ \hline
+1 & *.kit.edu\\ \hline
+2 & *.edu\\ \hline
+3 & *\\ \hline
+\end{tabular}
+\subsection{}
+iterativ, rekursive Aufrufe können mit gespoofter IP zu einem amplified DoS führen
+
+\end{document}
