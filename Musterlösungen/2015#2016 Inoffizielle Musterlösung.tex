@@ -10,51 +10,46 @@
 \renewcommand{\thesubsection}{\alph{subsection})}
 \title{Wintersemester 2015/2016 Inoffizielle Lösung}
 \begin{document}
-\section{Aufgabe 1: Allgemeine Fragen (11 Punkte)}
-\subsection{Wofür steht die Abkürzung CSMA/CD?}
+\section{}
+\subsection{}
 Carrier Sense Multiple Access / Collission Detection
-\subsection{Handelt es sich bei CSMA/CD um ein kontrolliertes oder konkurrierendes Zugriffsverfahren?}
+\subsection{}
 Konkurrierendes Zugriffsverfahren, da keine explizite Freigabe des Mediums erfordert wird.
-\subsection{Garantiert das CSMA/CD-Verfahren einem sendewilligen System, dass vorliegende Dateneinheiten erfolgreich versendet werden? Begründen Sie ihre Antwort.}
+\subsection{}
 Nein, da irgendwann ein Maximum an Sendeversuchen erreicht wird, wonach einfach abgebrochen wird.
-\subsection{Welche Protokollmechanismen biet3et Ethernet bereits um einen zuverlässigen Dienst zu unterstützen und welche Protokollmechanismen müsste Ethernet zusätzlich dafür bereitstellen?}
+\subsection{}
 Bietet: CRC (cyclic redundancy check)\\
 Fehlt: Quittungen, Sequenznummern
-\subsection{Wie wird bei HDLC die Unabhängigkeit (Transparenz) der zu übertragenden Daten von dem verwendeten Code erreicht?}
-\subsection{Gegeben sei ein Code mit den Codewörtern c1 = 10110101 und c2 = 11011000. Bestimmen Sie den Hamming-Abstand des Codes. Wie viele Bits dürfen maximal fehlerhaft sein für die Erkennung eines Fehlers und wieviele Bits dürfen maximal fehlerhaft sein für die Behebung eines Fehlers?}
+\subsection{}
+\subsection{}
 $10110101 \oplus 11011000 = 01101101 = 5$\\
 Hamming-Abstand: 5\\
 Korregierbar sind nur 1 Bit-Fehler.
-\subsection{A sendet Bitfolge 1101000001. B empfängt 1101111101. Welche Art von Bitfehler liegt vot? Begründen Sie ihre Antwort.}
+\subsection{}
 Bündelfehler
-\subsection{Warum bietet eine CRC-32 Prüfsumme keinen Integritätsschutz vor aktiven Angreifern?}
+\subsection{}
 CRC hat keine Abhängigkeit zu irgendeinem geheimen Schlüssel\\ 
 $\Rightarrow$ der Angreifer kann eine andere Nachricht erstellen und selber die Prüfsumme berechnen
-\subsection{Warum verwendet TCP für den Verbindungsaufbau nicht eine immer gleiche initiale Sequenznummer?}
+\subsection{}
 Systemneustart $\Rightarrow$ Sender und Empfänger hätte zum Beginn die gleiche Sequenznummer
-
 \pagebreak
-\section{Physikalische Grundlagen (13 Punkte)}
-\subsection{Wieviel Zeit benötigt eine Lieferdrohne für den Weg vom Campus Süd zum Campus Nord? Welcher Datenrate entspricht dies, angenommen die Speicherkapazität der transportierten Festplatte wird vollständig ausgenutzt?}
+\section{}
+\subsection{}
 $Zeit =\frac{s}{v} = \frac{10km}{90km/h} = 400s$\\\\
 $Datenrate = \frac{Mediengroeße}{Zeit} = \frac{4 TByte}{400s} = 10 GByte/s = 80 Gbit/s$
-\subsection{Wieviele Daten werden bei Verwendung der Glasfaserleitung auf dem ``Medium'' gepuffert? Wieviele bei Daten werden bei Verwendung der Lieferdrohne auf dem ``Medium'' gepuffert?}
+\subsection{}
 Drohne: 4 TByte (die Festplatte die sie trägt) \\\\
 $Puffergroeße = \frac{Abstand}{Ausbreitungsgeschwindigkeit} * Datenrate = \frac{10km}{200.000 km/s} * 40 Gbit/s
 = 5 * 10^-5 s * 40 Gbit/s = 2 Mbit*s $
-\subsection{Welche ``Länge'' hat ein Bit auf der Glasfaserleitung?}
+\subsection{}
 $Laenge = \frac{Abstand}{Puffergroeße} = \frac{10km}{2Mbit} = 0.005 m/b$
-\subsection{Alternativ zur Glasfaserleitung könnte auf einem Koaxialkabel zurückgegriffen werden, dessen Bandbreite 500 MHz beträgt. Welche Datenrate könnte über dieses Kabel mit dem Modulationsverfahren 40096-QAM (4096 Signalwerte je Signalschritt) nach Nyquist theoretisch übetragen werden?}
+\subsection{}
 % nicht sicher
 % $Datenrate = 2* Bandbreite * \log_2 Signalwerte pro Signalschritt = 2 * 500MHz * \log_2 4096 = 2 * 500MHz * 12 = 12 Gbit/s$
-\subsection{Sie sollen die Ihnen zur Verfügung gestellte Glasfaser-Ader mit einem weitern Institut gemeinsam nutzen. Welches der in der Vorlesung genannten Verfahren zur Mehrfachnutzung (Multiplex) scheidet damit aus? Begründen Sie Ihre Antwort kurz. Nennen Sie ein Anwendungsbeispiel für dieses Verfahren}
+\subsection{}
 Raummultiplexen scheidet aus, dieses wird zum Beispiel durch die Zellen beim Mobilfunk angewandt.
 \pagebreak
-\section{Bellman-Ford und Netzkopplung}
-Gegeben sei ein Netz mit vier Routern gemäß Abbildung 3.1. Die Verbindungen zwischen den Routern sind mit den angegebenen Kosten belegt. Die Weiterleitungstabellen der einzelnen Router werden mit Hilfe eines auf dem Bellman-For-Algorithmus aufbauenden Routing-Protokolls gefüllt. Dabei kommt kein Poisonous Reverse zum Einsatz.\\[0.5cm]
-Zum Zeitpunkt $t_0$ startet der Algorithmus mit einer Initialisierung der Distanz-Vektor-Tabellen aller Router.\\[0.5cm]
-Zuden Zeitpunkten $t_1$ und $t_3$
-(und nur zu diesen Zeitpunkten) tauschen alle Router gleichzeitig Update-Nachrichten aus.
+\section{}
 \begin{center}
 \begin{tikzpicture}[auto, node distance=3.5cm, every loop/.style={},
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
@@ -72,7 +67,7 @@ Zuden Zeitpunkten $t_1$ und $t_3$
     (4) edge node {1} (3);
 \end{tikzpicture}
 \end{center}
-\subsection{Vervollständigen sie die Distanz-Vektor-Tabellen der vier Router zu den Zeitpunkten $t_2$ und $t_4$} 
+\subsection{} 
 \paragraph{$t_0:$}
 \begin{center}
   \begin{tabular}{|c|c|c|}
@@ -178,15 +173,15 @@ Zuden Zeitpunkten $t_1$ und $t_3$
   \end{tabular}
 \end{center}
 
-\subsection{Welches Problem des naiven Bellman-Ford-Algorithmus behebt Poisonous Reverse? Erläutern sie kurz, wie es zu diesem Problem kommt und wie Poisonous Reverse es löst.}
+\subsection{}
 Das Count-to-Infinity-Problem, wenn Linkkosten sich ändern brauch es relativ lang bis negative Änderungen sich ausbreiten.
 Poisoned Reverse löst dies dadurch, dass ein Router X Routing-Informationen über einen Nachbar Y ``zurückhält'', wenn der Weg von ihm über einen anderen Nachbarn Z kürzer ist.
-\subsection{Netze können auf verschiedenen Schichten im OSI-Referenzmodell gekoppelt werden. Auf welcher Schicht werden werden zur Netzkopplung keine Adressinformationen genutzt? Nennen Sie ein Beispiel für ein Zwischensystem, welches hauptsächlich auf dieser Schicht arbeitet.}
-\subsection{Geben Sie eine beliebige, korrekt formatierte IPv4-Adresse an, die einem Endsystem so zugewiesen werden könnte.}
+\subsection{}
+\subsection{}
 129.13.40.10 (kit.edu)
-\subsection{Was wird mit TCP- und UDP-Ports typischerweise adressiert?}
+\subsection{}
 Die Zuordnung von TCP- und UDP-Verbindungen und -Datenpaketen zu Server- und Client-Programmen durch Betriebssysteme.
-\subsection{Mit Fluten wurde in der Vorlesung ein einfaches Routingverfahren vorgestellt, welches ohne Weiterleitungstabellen auskommt. Eine naive Implementierung, welche jedes empfangene Paket bedingungslos weiterleitet, überschwemmt ein Netzwerk in Skundenbruchteilen und macht es unbenutzbar. In der Vorlesung wurden zwei Maßnahmen erläutert, mit denen die Paketflut eingedämmt werden kann. Erklären Sie diese kurz. Geben Sie dabei an, welche Informationen im Paketkopf für diese Maßnahmen benötigt wird.}
+\subsection{}
 \begin{enumerate}
 \item Erkennung von Duplikaten durch Sequenznummern
 \item Kontrolle der Lebensdauer eines Datagramms durch Zählen der zurückgelegten Übertragungsabschnitte (Hops)
@@ -198,24 +193,24 @@ Die Zuordnung von TCP- und UDP-Verbindungen und -Datenpaketen zu Server- und Cli
 \end{enumerate}
 Option 1 erfordert Sequenznummern im Header.
 Option 2 einen modifizierbaren Hop-Zähler im Header.
-\subsection{Nenenn Sie ein Beispiel für ein Distanz-Vector-Routingprotokoll}
+\subsection{}
 RIP (Routing Information Protocol), IGRP(Interior Gateway Routing Protocol), Babel
-\subsection{Beim Link-State-Routing haben alle Systeme ein identisches Wissen über das gesamte Netz. Dabei kannn unter bestimmten Umständen beobachtet werden, dass Routen (und damit der Datenverkehr) wiederholt in schneller Folge zwisschen verschiedenen Pfaden wechseln. Wie wird dieses Verhalten bezeichnet? Nennen Sie eine Möglichkeit wie es vermieden werden kann.}
+\subsection{}
 Das Phänomen heißt Oszillation.
 \begin{itemize}
 \item Router berechnen den Algorithmus nicht zum selben Zeitpunkt
 \item Hinzufügen eines Zufalls
 \end{itemize}
 \pagebreak
-\section{Protokollmechanismen (6 Punkte)}
-\subsection{Selective Repeat als ARQ-Verfahren. Illustrieren Sie den Ablauf der Datenübetragung, bis alle Dateneinheiten (S=0 bis S=3) beim Empfänger angekommen uird. Verwenden Sie hierfür das vorgegebene Weg-Zeit-Diagramm auf dem Lösungsblatt und kennzeichnen Sie mögliche auftretende Timeouts}
-\subsection{Selective Reject als ARQ-Verfahren. Illustrieren Sie den Ablauf der Datenübertragung, bis allle Dateneinheiten (S=0 bis S=3) beim Empfänger angekommen und bestätigt sind für den Fall, dass Selective Reject als ARQ-Verfahren verwendet wird, verwenden Sie hierfür das vorgegebene Weg-Zeit-Diagramm auf dem Lösungsblatt und kennzeichnen Sie mögliche auftretende Timeouts}
+\section{}
+\subsection{}
+\subsection{}
 \pagebreak
 \section{Zusammenspiel der Schichten}
-\subsection{Ist es potentiell möglich, dass Endsystem A am Ende nicht IP-WWW als Antwort bekommt, sondern eine andere IP-Adresse? Begründen Sie Ihre Antwort durch ein kurzes Beispiel}
+\subsection{}
 Ja, eine Adresse wurde falsch gecached.
-\subsection{Annahmen: ARP- sowie DNS-Cache des Endsystems A seien zu Beginn leer. Die jeweiligen Default-Router und lokalen Nameserver sind bei allen Systemen passend konfiguriert. Skizzieren Sie anhand der vorgegebenen Tabelle deb Kommunikationsablauf aus Sicht des lokalen Nameservers zwisschen ihm, Endsystem A und den Nameservern im Internet. Fügen Sie die fehlenden Adressen und Protokolle in die vorgesehenen Felder der Tabelle ein. Alle IP- und MAC-Adressen in Abbildung 5.1 sind jeweils aals vereinfachte Pseudo-Bezeichner angegeben. Berücksichtigen Sie alle gesendeten und empfangenen Dateneinheiten des lokalen Nameservers bis einschließlich der Antwort an das Endsystem A. Nutzen Sie nur die vorgegebenen Felder. In den lokalen Netzen kommt jeweils Ethernet zum Einsatz. Die Ethernet-Broadcast-Adresse laute MAC-BROAD.}
 \pagebreak
+\subsection{}
 \rotatebox{90}{
 \begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
 Zeile & Ethernet-Quelladresse & Ethernet-Zieladresse & Typ & IP-Quelladresse & IP-Zieladresse & Inhalt Anfrage & Inhalt Antwort \\ \hline
